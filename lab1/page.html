@@ -1,0 +1,65 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image" href="images/favicon.ico">
+    <title>1st web-programming lab</title>
+    <style>
+        TABLE {
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+            width: 100%; /* Ширина таблицы */
+        }
+        TH {
+            background: lightskyblue; /* Цвет фона ячейки */
+            text-align: center; /* Выравнивание по левому краю */
+            font-family: fantasy;
+            font-size: larger;
+        }
+        TD {
+            background: lightgrey; /* Цвет фона ячеек */
+            text-align: center; /* Выравнивание по центру */
+        }
+        TH, TD {
+            border: 1px solid black; /* Параметры рамки */
+            padding: 4px; /* Поля вокруг текста */
+        }
+        .blue-input:focus { /* pseudo-class selector usage
+                               TOD): color changing in form of cooridante entering
+                               */
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellpadding="0" cellspacing="0" width="100%" height=auto>
+        <tr>
+            <th colspan=2>Nesterov I.A., group P3231 <br> Variant: 34100</th>
+        </tr>
+        <tr>
+            <td width="20%">Request history</td>
+            <td width="80%">Functional part of this application</td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <table border="1" id="request-history" align="center">
+                    <hr style="margin-top: 0px">
+                    <caption>Request history:</caption>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>R</td>
+                    <td>Current time</td>
+                    <td>Execution time</td>
+                    <td>Hit</td>
+                </table>
+            </td>
+            <td width="80%">Content for image and form of data entering</td>
+        </tr>
+        <tr>
+            <td align="right" colspan=2><b>Contact us:</b>
+                <br> Developer: Nesterov Ivan
+                <br> <a href="https://github.com/nesterrovv">GitHub profile</a>
+                <br> <a href="https://t.me/nesterrovv">Telegram profile</a>
+                <br> <a href="mailto:nesterov.iv2018@gmail.com">E-mail</a>
+            </td>
+        </tr>
+    </table>
+</body>
