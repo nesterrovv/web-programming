@@ -5,22 +5,22 @@
     <title>1st web-programming lab</title>
     <style>
         TABLE {
-            border-collapse: collapse; /* Убираем двойные линии между ячейками */
-            width: 100%; /* Ширина таблицы */
+            border-collapse: collapse; /* delete double lines between cells */
+            width: 100%;
         }
         TH {
-            background: lightskyblue; /* Цвет фона ячейки */
-            text-align: center; /* Выравнивание по левому краю */
+            background: lightskyblue;
+            text-align: center;
             font-family: fantasy;
             font-size: larger;
         }
         TD {
-            background: lightgrey; /* Цвет фона ячеек */
-            text-align: center; /* Выравнивание по центру */
+            background: lightgrey;
+            text-align: center;
         }
         TH, TD {
-            border: 1px solid black; /* Параметры рамки */
-            padding: 4px; /* Поля вокруг текста */
+            border: 1px solid black;
+            padding: 4px;
         }
         .blue-input:focus { /* pseudo-class selector usage
                                TODO: color changing in form of cooridante entering
@@ -67,7 +67,65 @@
                     <td>Hit</td>
                 </table>
             </td>
-            <td width="80%">Content for image and form of data entering</td>
+            <td width="80%">
+                <table>
+                    <td width="50%">
+
+                    </td>
+                    <td width="50%">
+                        <form onsubmit="receive(); return false" id="form" method="post">
+
+                            <!-- Блок взаимодействия с пользователем -->
+                            <div class="user-input">
+
+                                <!-- Блок для значения X -->
+                                <div class="X_value">
+                                    <text >Enter X coordinate:</text>
+                                    <input type="text" id="X" name="X" placeholder="value from (-5;3)">
+                                </div>
+
+                                <!-- Блок ошибки для координаты X -->
+                                <div id="X_error" style="color: #d31f1f">
+                                </div>
+
+                                <!-- Блок для значения Y -->
+                                <div class="Y_value">
+                                    <text>Enter X coordinate:</text>
+                                    <input type="text" id="Y" name="Y" placeholder="value from (-5;3)">
+                                </div>
+
+                                <!-- Блок ошибки для координаты Y -->
+                                <div id="Y_error" style="color: #d31f1f">
+                                </div>
+
+                                <!-- Блок для значения R -->
+                                <div class="R_value">
+                                    <text>Choose R parameter value:</text>
+                                    <p style="text-align: center">
+                                        <button style="background-color: deepskyblue; color: white">1</button>
+                                        <button style="background-color: dodgerblue; color: white">2</button>
+                                        <button style="background-color: blue; color: white">3</button>
+                                        <button style="background-color: mediumblue; color: white">4</button>
+                                        <button style="background-color: darkblue; color: white">5</button>
+                                    </p>
+                                    </select>
+                                </div>
+
+                                <!-- Блок ошибки для значения R -->
+                                <div id="R_error" style="color: #d31f1f">
+                                </div>
+
+                                <!-- Блок кнопок -->
+                                <div class="buttons">
+                                    <input id="check" name="check" type="submit" value="Check"
+                                           title="Введите значение в промежутке (-3...3)!">
+                                    <input id="reset" name="reset" type="reset" value="Reset">
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </table>
+            </td>
         </tr>
         <tr>
             <td align="right" colspan=2><b>Contact us:</b>
