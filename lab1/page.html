@@ -1,4 +1,5 @@
 <!doctype html>
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image" href="images/favicon.ico">
@@ -9,32 +10,37 @@
             width: 100%;
         }
         TH {
-            background: lightskyblue;
             text-align: center;
             font-family: fantasy;
             font-size: larger;
         }
         TD {
-            background: lightgrey;
             text-align: center;
         }
         TH, TD {
             border: 1px solid black;
             padding: 4px;
         }
-        .blue-input:focus { /* pseudo-class selector usage
-                               TODO: color changing in form of cooridante entering
-                               */
-            color: blue;
+        td#contact_info {
+            background-color: lightskyblue;
+            text-align: right;
         }
+        .page_hat {
+            background-color: lightskyblue;
+        }
+        TR > TD {
+            background-color: lightgrey;
+        }
+
     </style>
     <script>
+        // clocks JS script
         function digitalClock() {
             var date = new Date();
             var hours = date.getHours();
             var minutes = date.getMinutes();
             var seconds = date.getSeconds();
-            //* добавление ведущих нулей */
+            //* leading zeros adding */
             if (hours < 10) hours = "0" + hours;
             if (minutes < 10) minutes = "0" + minutes;
             if (seconds < 10) seconds = "0" + seconds;
@@ -43,9 +49,15 @@
         }
     </script>
 </head>
+
 <body>
-    <table border="1" cellpadding="0" cellspacing="0" width="100%" height=auto>
-        <tr>
+    <table
+            border="1"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            height=auto>
+        <tr class="page_hat">
             <th colspan=2>Nesterov I.A., group P3231 <br> Variant: 34100</th>
         </tr>
         <tr>
@@ -54,9 +66,17 @@
         </tr>
         <tr>
             <td width="25%">
-                <div id="id_clock" style="background-color: lightseagreen; color: ghostwhite; border:4px outset midnightblue; padding:5px 20px;"></div>
+                <div
+                        id="id_clock"
+                        style="background-color: lightseagreen;
+                        color: ghostwhite;
+                        border:4px outset midnightblue;
+                        padding:5px 20px;">
+                </div>
                 <script>digitalClock();</script>
+
                 <table border="1" id="request-history" align="center">
+
                     <hr style="margin-top: 0px">
                     <caption>Request history:</caption>
                     <td>X</td>
@@ -108,45 +128,49 @@
                             <text x="185" y="245" font-size="20">-R/2</text>
                             <text x="185" y="315" font-size="20">-R</text>
 
-                            <rect x="40" y="175" width="135" height="135" fill="lightskyblue" fill-opacity="0.5"/>
-
-                            <polygon points="175 175, 175 240, 240 175" fill="lightskyblue" fill-opacity="0.5"></polygon>
-
+                            <!-- area in 1st coordinate quarter -->
                             <g transform="translate(175,175)">
-                                <path d="M0 0-0-135A135 135 0 0 1 135-0Z" fill="lightskyblue" fill-opacity="0.5"/>
+                                <path d="M0 0-0-135A135 135 0 0 1 135-0Z" fill="lightskyblue" fill-opacity="0.6"/>
                             </g>
 
+                            <!-- area in 3th coordinate quarter -->
+                            <rect x="40" y="175" width="135" height="135" fill="lightskyblue" fill-opacity="0.6"/>
+
+                            <!-- area in 4th coordinate quarter -->
+                            <polygon points="175 175, 175 240, 240 175" fill="lightskyblue" fill-opacity="0.6"></polygon>
 
                         </svg>
 
                     </td>
+
                     <td width="50%">
+
                         <form onsubmit="receive(); return false" id="form" method="post">
 
-                            <!-- Блок взаимодействия с пользователем -->
+                            <!-- Block for working with user input -->
                             <div class="user-input">
 
-                                <!-- Блок для значения X -->
+                                <!-- Entering X value block -->
                                 <div class="X_value">
                                     <text >Enter X coordinate:</text>
                                     <input type="text" id="X" name="X" placeholder="value from (-5;3)">
                                 </div>
 
-                                <!-- Блок ошибки для координаты X -->
+                                <!-- X entering error block -->
                                 <div id="X_error" style="color: #d31f1f">
                                 </div>
 
-                                <!-- Блок для значения Y -->
+                                <!-- Entering Y value block -->
                                 <div class="Y_value">
                                     <text>Enter X coordinate:</text>
                                     <input type="text" id="Y" name="Y" placeholder="value from (-5;3)">
                                 </div>
 
-                                <!-- Блок ошибки для координаты Y -->
+                                <!-- Y entering error block -->
                                 <div id="Y_error" style="color: #d31f1f">
                                 </div>
 
-                                <!-- Блок для значения R -->
+                                <!-- Entering R parameter value block -->
                                 <div class="R_value">
                                     <text>Choose R parameter value:</text>
                                     <p style="text-align: center">
@@ -159,29 +183,42 @@
                                     </select>
                                 </div>
 
-                                <!-- Блок ошибки для значения R -->
+                                <!-- R parameter value entering error block -->
                                 <div id="R_error" style="color: #d31f1f">
                                 </div>
 
-                                <!-- Блок кнопок -->
+                                <!-- Block for check and reset buttons -->
                                 <div class="buttons">
-                                    <input id="check" name="check" type="submit" value="Check"
-                                           title="Введите значение в промежутке (-3...3)!">
-                                    <input id="reset" name="reset" type="reset" value="Reset">
+                                    <input id="check" name="check" type="submit" value="Check value"
+                                           title="Enter the value from (-5;3)!">
+                                    <input id="reset" name="reset" type="reset" value="Reset enter">
                                 </div>
+
                             </div>
+
                         </form>
+
                     </td>
+
                 </table>
+
             </td>
+
         </tr>
+
         <tr>
-            <td align="right" colspan=2><b>Contact us:</b>
-                <br> Developer: Nesterov Ivan
-                <br> <a href="https://github.com/nesterrovv">GitHub profile</a>
-                <br> <a href="https://t.me/nesterrovv">Telegram profile</a>
-                <br> <a href="mailto:nesterov.iv2018@gmail.com">E-mail</a>
-            </td>
+            <!-- cell with contact info -->
+            <div>
+                <td align="right" colspan=2 id="contact_info"><b>Contact us:</b>
+                    <br> Developer: Nesterov Ivan
+                    <br> <a href="https://github.com/nesterrovv">GitHub profile</a>
+                    <br> <a href="https://t.me/nesterrovv">Telegram profile</a>
+                    <br> <a href="mailto:nesterov.iv2018@gmail.com">E-mail</a>
+                </td>
+            </div>
+
         </tr>
+
     </table>
+
 </body>
