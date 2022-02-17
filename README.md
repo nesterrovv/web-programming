@@ -1,4 +1,4 @@
-# Web-programming course at the ITMO University, 2th year of study
+# Web-programming course at the ITMO University, 2nd year of study
 
 ## Lab work #1 - variant 34100
 
