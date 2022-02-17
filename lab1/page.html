@@ -26,6 +26,9 @@
             text-align: right;
         }
         .page_hat {
+            background-color: navy;
+        }
+        .page_hat {
             background-color: lightskyblue;
         }
         TR > TD {
@@ -74,9 +77,7 @@
                         padding:5px 20px;">
                 </div>
                 <script>digitalClock();</script>
-
                 <table border="1" id="request-history" align="center">
-
                     <hr style="margin-top: 0px">
                     <caption>Request history:</caption>
                     <td>X</td>
@@ -91,85 +92,65 @@
                 <table>
                     <td width="50%">
                         <svg xmlns="http://www.w3.org/2000/svg" width="350" height="350">
-
                             <!-- axis -->
                             <line stroke="black" x1="0" y1="175" x2="350" y2="175"/>
                             <line stroke="black" x1="175" y1="0" x2="175" y2="350"/>
-
                             <!-- axis arrows -->
                             <polygon points="175,0 170,15 180,15" stroke="black"></polygon>
                             <polygon points="350,175 335,170 335,180" stroke="black"></polygon>
-
                             <!-- axis values -->
                             <text x="335" y="165" font-size="25">x</text>
                             <text x="185" y="15" font-size="25">y</text>
-
                             <!-- x-axis labels -->
                             <line stroke="black" x1="40" y1="170" x2="40" y2="180"/>
                             <line stroke="black" x1="110" y1="170" x2="110" y2="180"/>
                             <line stroke="black" x1="240" y1="170" x2="240" y2="180"/>
                             <line stroke="black" x1="310" y1="170" x2="310" y2="180"/>
-
                             <!-- y-axis labels -->
                             <line stroke="black" x1="170" y1="40" x2="180" y2="40"/>
                             <line stroke="black" x1="170" y1="110" x2="180" y2="110"/>
                             <line stroke="black" x1="170" y1="240" x2="180" y2="240"/>
                             <line stroke="black" x1="170" y1="310" x2="180" y2="310"/>
-
                             <!-- names of x-axis labels -->
                             <text x="35" y="160" font-size="20">-R</text>
                             <text x="90" y="160" font-size="20">-R/2</text>
                             <text x="225" y="160" font-size="20">R/2</text>
                             <text x="305" y="160" font-size="20">R</text>
-
                             <!-- names of y-axis labels -->
                             <text x="185" y="45" font-size="20">R</text>
                             <text x="185" y="115" font-size="20">R/2</text>
                             <text x="185" y="245" font-size="20">-R/2</text>
                             <text x="185" y="315" font-size="20">-R</text>
-
                             <!-- area in 1st coordinate quarter -->
                             <g transform="translate(175,175)">
                                 <path d="M0 0-0-135A135 135 0 0 1 135-0Z" fill="lightskyblue" fill-opacity="0.6"/>
                             </g>
-
                             <!-- area in 3th coordinate quarter -->
                             <rect x="40" y="175" width="135" height="135" fill="lightskyblue" fill-opacity="0.6"/>
-
                             <!-- area in 4th coordinate quarter -->
                             <polygon points="175 175, 175 240, 240 175" fill="lightskyblue" fill-opacity="0.6"></polygon>
-
                         </svg>
-
                     </td>
-
                     <td width="50%">
-
                         <form onsubmit="receive(); return false" id="form" method="post">
-
                             <!-- Block for working with user input -->
                             <div class="user-input">
-
                                 <!-- Entering X value block -->
                                 <div class="X_value">
                                     <text >Enter X coordinate:</text>
                                     <input type="text" id="X" name="X" placeholder="value from (-5;3)">
                                 </div>
-
                                 <!-- X entering error block -->
                                 <div id="X_error" style="color: #d31f1f">
                                 </div>
-
                                 <!-- Entering Y value block -->
                                 <div class="Y_value">
                                     <text>Enter X coordinate:</text>
                                     <input type="text" id="Y" name="Y" placeholder="value from (-5;3)">
                                 </div>
-
                                 <!-- Y entering error block -->
                                 <div id="Y_error" style="color: #d31f1f">
                                 </div>
-
                                 <!-- Entering R parameter value block -->
                                 <div class="R_value">
                                     <text>Choose R parameter value:</text>
@@ -182,30 +163,21 @@
                                     </p>
                                     </select>
                                 </div>
-
                                 <!-- R parameter value entering error block -->
                                 <div id="R_error" style="color: #d31f1f">
                                 </div>
-
                                 <!-- Block for check and reset buttons -->
                                 <div class="buttons">
                                     <input id="check" name="check" type="submit" value="Check value"
                                            title="Enter the value from (-5;3)!">
                                     <input id="reset" name="reset" type="reset" value="Reset enter">
                                 </div>
-
                             </div>
-
                         </form>
-
                     </td>
-
                 </table>
-
             </td>
-
         </tr>
-
         <tr>
             <!-- cell with contact info -->
             <div>
@@ -216,9 +188,6 @@
                     <br> <a href="mailto:nesterov.iv2018@gmail.com">E-mail</a>
                 </td>
             </div>
-
         </tr>
-
     </table>
-
 </body>
