@@ -29,6 +29,46 @@ function isCorrectNumber(number) {
     return false;
 }
 
-function validateData() {
-    // TODO: validation logic
+function validateData(event) {
+    event.preventDefault();
+    var data = receiveDataFromForm();
+    var errors = receiveErrors();
+    var x = data[0].trim();
+    var y = data[1].trim();
+    var r = data[2] .trim();
+    var xError = errors[0];
+    var yError = errors[1];
+    var rError = errors[2];
+    var xIsCorrect = false;
+    var yIsCorrect = false;
+    var rIsCorrect = false;
+    if (isNumber(x)) {
+        if (isCorrectNumber(x)) {
+            xIsCorrect = true;
+            xError.innerHTML = "";
+        } else {
+            xError.innerHTML = "X variable must take value in the range (-5;3)!";
+        }
+    } else {
+        xError.innerHTML = "X value must be a number!";
+    }
+    if (isNumber(y)) {
+        if (isCorrectNumber(y)) {
+            yIsCorrect = true;
+            yError.innerHTML = "";
+        } else {
+            yError.innerHTML = "Y variable must take value in the range (-5;3)!";
+        }
+    } else {
+        yError.innerHTML = "Y value must be a number!";
+    }
+    if (isNumber(r)) {
+        rIsCorrect = true;
+        rError.innerHTML = "";
+    } else {
+        rError.innerHTML = "R parameter must take value from [1,2,3,4,5]!";
+    }
+    if (xIsCorrect && yIsCorrect && rIsCorrect) {
+        return true;
+    } else return false;
 }
