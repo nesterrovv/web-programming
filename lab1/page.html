@@ -49,7 +49,6 @@
             setTimeout("digitalClock()", 1000);
         }
     </script>
-    <script type = "text/javascript" src="validator.js"></script>
 </head>
 <body>
     <table
@@ -132,41 +131,29 @@
                         </svg>
                     </td>
                     <td width="50%">
-                        <form onsubmit="receive(); return false" id="form" method="post">
-                            <!-- Block for working with user input -->
+                        <form id="form" method="post">
                             <div class="user-input">
-                                <!-- Entering X value block -->
-                                <div class="X_value">
-                                    <text >Enter X coordinate:</text>
-                                    <input type="text" id="X" name="X" placeholder="value from (-5;3)">
+                                <div class="xValue">
+                                    <label for="x">Enter x value: </label>
+                                    <input id="x"  type="text" name="text-form" placeholder="value from (-5;3)" required></input><br>
                                 </div>
-                                <!-- X entering error block -->
-                                <div id="X_error" style="color: #d31f1f">
+                                <div class="yValue">
+                                    <label for="y">Enter y value: </label>
+                                    <input id="y"  type="text" name="text-form" placeholder="value from (-5;3)" required></input><br>
                                 </div>
-                                <!-- Entering Y value block -->
-                                <div class="Y_value">
-                                    <text>Enter X coordinate:</text>
-                                    <input type="text" id="Y" name="Y" placeholder="value from (-5;3)">
-                                </div>
-                                <!-- Y entering error block -->
-                                <div id="Y_error" style="color: #d31f1f">
-                                </div>
-                                <!-- Entering R parameter value block -->
-                                <div class="R_value">
+                                <div class="rValue">
                                     <text>Choose R parameter value:</text>
-                                    <p style="text-align: center">
-                                        <button style="background-color: deepskyblue; color: white">1</button>
-                                        <button style="background-color: dodgerblue; color: white">2</button>
-                                        <button style="background-color: blue; color: white">3</button>
-                                        <button style="background-color: mediumblue; color: white">4</button>
-                                        <button style="background-color: darkblue; color: white">5</button>
-                                    </p>
-                                    </select>
+                                    <input type="radio" name ="r" id="r1" value="1">
+                                    <label for="r1">1</label>
+                                    <input type="radio" name ="r" id="r2" value="2">
+                                    <label for="r2">2</label>
+                                    <input type="radio" name ="r" id="r3" value="3">
+                                    <label for="r3">3</label>
+                                    <input type="radio" name ="r" id="r4" value="4">
+                                    <label for="r4">4</label>
+                                    <input type="radio" name ="r" id="r5" value="5">
+                                    <label for="r5">5</label>
                                 </div>
-                                <!-- R parameter value entering error block -->
-                                <div id="R_error" style="color: #d31f1f">
-                                </div>
-                                <!-- Block for check and reset buttons -->
                                 <div class="buttons">
                                     <input id="check" name="check" type="submit" value="Check value"
                                            title="Enter the value from (-5;3)!">
@@ -190,4 +177,5 @@
             </div>
         </tr>
     </table>
+    <script type = "text/javascript" src="validator.js"></script>
 </body>
