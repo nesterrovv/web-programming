@@ -7,6 +7,12 @@ function receiveDataFromForm() {
     return [x, y, r];
 }
 
+function receiveErrors() {
+    var xError = document.getElementById('xError');
+    var yError = document.getElementById('yError');
+    var rError = document.getElementById('rError');
+}
+
 function isNumber(number) {
     if (number != null && number != "") {
         if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(number)) {
