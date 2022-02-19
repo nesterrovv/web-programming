@@ -34,21 +34,7 @@
             background-color: lightgrey;
         }
     </style>
-    <script>
-        // clock JS script
-        function digitalClock() {
-            var date = new Date();
-            var hours = date.getHours();
-            var minutes = date.getMinutes();
-            var seconds = date.getSeconds();
-            //* leading zeros adding */
-            if (hours < 10) hours = "0" + hours;
-            if (minutes < 10) minutes = "0" + minutes;
-            if (seconds < 10) seconds = "0" + seconds;
-            document.getElementById("id_clock").innerHTML = "Current time: " + hours + ":" + minutes + ":" + seconds;
-            setTimeout("digitalClock()", 1000);
-        }
-    </script>
+    <script type = "text/javascript" src = "clock.js"></script>>
 </head>
 <body>
     <table
@@ -180,5 +166,5 @@
             </div>
         </tr>
     </table>
-    <script type = "text/javascript" src="validator.js"></script>
+    <script type = "text/javascript" src = "validator.js"></script>
 </body>
