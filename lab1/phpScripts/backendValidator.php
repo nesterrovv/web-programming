@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Function for data validation on back-end side of application
+ * The module for data validation on back-end side of application
  * @param $x value of x variable from html-form
  * @param $y value of y variable from html-form
  * @param $r value of R parameter from html-form
