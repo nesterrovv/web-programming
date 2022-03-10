@@ -11,6 +11,7 @@ function receiveErrors() {
     var xError = document.getElementById('xError');
     var yError = document.getElementById('yError');
     var rError = document.getElementById('rError');
+    return [xError, yError, rError];
 }
 
 function isNumber(number) {
@@ -35,7 +36,7 @@ function validateData(event) {
     var errors = receiveErrors();
     var x = data[0].trim();
     var y = data[1].trim();
-    var r = data[2] .trim();
+    var r = data[2].trim();
     var xError = errors[0];
     var yError = errors[1];
     var rError = errors[2];
@@ -70,5 +71,7 @@ function validateData(event) {
     }
     if (xIsCorrect && yIsCorrect && rIsCorrect) {
         return true;
-    } else return false;
+    } else {
+        return false;
+    }
 }

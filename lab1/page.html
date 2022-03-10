@@ -34,8 +34,20 @@
             background-color: lightgrey;
         }
     </style>
-    <script type = "text/javascript" src = "jsScripts/clock.js"></script>
-    <script type = "text/javascript" src = "jsScripts/validator.js"></script>
+    <script>
+        function digitalClock() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            //* leading zeros adding */
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+            if (seconds < 10) seconds = "0" + seconds;
+            document.getElementById("id_clock").innerHTML = "Current time: " + hours + ":" + minutes + ":" + seconds;
+            setTimeout("digitalClock()", 1000);
+        }
+    </script>
 </head>
 <body>
     <table
@@ -118,29 +130,31 @@
                         </svg>
                     </td>
                     <td width="50%">
-                        <form id="form" method="post">
+                        <form id="form" method="post" onsubmit="receive(); return false;">
                             <div class="user-input">
                                 <div class="xValue">
                                     <label for="x">Enter x value: </label>
-                                    <input id="x"  type="text" name="text-form" placeholder="value from (-5;3)" required></input><br>
+                                    <input id="x" type="text" name="xValue" placeholder="value from (-5;3)"
+                                           maxlength="16" required/><br>
                                 </div>
                                 <div id="xError" style="color: #d31f1f"></div>
                                 <div class="yValue">
                                     <label for="y">Enter y value: </label>
-                                    <input id="y"  type="text" name="text-form" placeholder="value from (-5;3)" required></input><br>
+                                    <input id="y" type="text" name="yValue" placeholder="value from (-5;3)"
+                                           maxlength="16" required/><br>
                                 </div>
                                 <div id="yError" style="color: #d31f1f"></div>
                                 <div class="rValue">
                                     <text>Choose R parameter value:</text>
-                                    <input type="radio" name ="r" id="r1" value="1">
+                                    <input type="radio" class="radio" name ="r" id="r1" value="1">
                                     <label for="r1">1</label>
-                                    <input type="radio" name ="r" id="r2" value="2">
+                                    <input type="radio" class="radio" name ="r" id="r2" value="2">
                                     <label for="r2">2</label>
-                                    <input type="radio" name ="r" id="r3" value="3">
+                                    <input type="radio" class="radio" name ="r" id="r3" value="3">
                                     <label for="r3">3</label>
-                                    <input type="radio" name ="r" id="r4" value="4">
+                                    <input type="radio" class="radio" name ="r" id="r4" value="4">
                                     <label for="r4">4</label>
-                                    <input type="radio" name ="r" id="r5" value="5">
+                                    <input type="radio" class="radio" name ="r" id="r5" value="5">
                                     <label for="r5">5</label>
                                 </div>
                                 <div id="rError" style="color: #d31f1f"></div>
@@ -167,4 +181,8 @@
             </div>
         </tr>
     </table>
+    <script type="text/javascript" src="jsScripts/validator.js"></script>
+    <script type="text/javascript" src="jsScripts/ajaxSender.js"></script>
+    <script type="text/javascript" src="jsScripts/clock.js"></script>
+    <script type="text/javascript" src="jsScripts/jQuery.js"></script>
 </body>

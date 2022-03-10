@@ -12,12 +12,13 @@ if (isset($_POST["x"]) && isset($_POST["y"]) && isset($_POST["r"])) {
     $x = $_POST["x"];
     $y = $_POST["y"];
     $r = $_POST["r"];
-    if (validate()) {
+    //console.log($x);
+    if (validate($x, $y, $r)) {
         $hit_result = pointInArea($x, $y, $r) ? "<span style='color: #0fc40f'>TRUE</span>" : "<span style='color: red'>FALSE</span>";
         $execution_time = number_format(microtime(true) - $start, 8, ".", "") * 1000000;
         die(<<<_END
         <tr>
-            <th style="max-width: 300px; word-wrap: break-word";>$x</th>
+            <th style="max-width: 300px; word-wrap: break-word">$x</th>
             <th>$y</th>
             <th>$r</th>
             <th>$current_time</th>
@@ -27,5 +28,8 @@ if (isset($_POST["x"]) && isset($_POST["y"]) && isset($_POST["r"])) {
 _END
         );
     }
+    die("Data is incorrect! Try again!");
 }
 die("Data is incorrect! Try again!");
+
+?>
