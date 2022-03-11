@@ -17,4 +17,6 @@ in the area. Previous results must be processed between queries and in the table
 * Input element padding must be specified in pixels.
 * The page must contain a JavaScript script that validates the values ​​entered by the user in the form fields. Any invalid values ​​(such as letters in point coordinates or a negative radius) should be blocked.
 
-You can check the operability of the laboratory work on the university cluster [at this link](https://se.ifmo.ru/~s312621/lab1/page.html).
+### Execution: 
+
+You can check the operability of the laboratory work on the university cluster [at this link](https://se.ifmo.ru/~s312621/lab1/page.html). There is a PDF-report in lab work folder.
