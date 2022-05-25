@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>3rd web-programming lab</title>
+    <h:outputStylesheet library="css" name="index.css"/>
+    <h:link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'/>
+    <h:link href="https://fonts.googleapis.com/css2?family=Dancing" rel="stylesheet"/>
+
+</h:head>
+<h:body>
+    <div id="container">
+        <div id="header">
+            <ui:include src="header.xhtml"></ui:include>
+        </div>
+        <div>
+            <ui:include src="navigation.xhtml"></ui:include>
+        </div>
+        <div id="content">
+            <div class="clock_bg">
+                <span class="clock_text">Time</span>
+                <div id="clock"></div>
+            <span class="clock_text">Date</span>
+                <div id="date"></div>
+            </div>
+
+        </div>
+    </div>
+    <h:outputScript library="js" name="clock.js"/>
+</h:body>
+</html>

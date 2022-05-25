@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:custom="http://java.sun.com/jsf/composite/"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+    <h:outputStylesheet library="css" name="app.css"/>
+</h:head>
+<h:body>
+    <div id="container">
+        <div id="header">
+            <ui:include src="header.xhtml"></ui:include>
+        </div>
+        <div id="nav_section">
+            <ui:include src="navigation.xhtml"></ui:include>
+        </div>
+        <table style="width: 100%">
+            <tr>
+                <td id="area_svg">
+                    <ui:include src="svg.xhtml"/>
+                </td>
+                <td>
+                    <h:form id="input-f">
+                        <div>
+                            <h:outputLabel for="coord-x" value="Choose X:"/>
+                            <p:panelGrid columns="2">
+                                <h:selectOneRadio id="coord-x" value="#{resultBean.newResult.x}" required="true">
+                                    <f:selectItem class="checkGroup" itemValue="-2" itemLabel="-2" />
+                                    <f:selectItem class="checkGroup" itemValue="-1.5" itemLabel="-1.5"/>
+                                    <f:selectItem class="checkGroup" itemValue="-1" itemLabel="-1"/>
+                                    <f:selectItem class="checkGroup" itemValue="-0.5" itemLabel="-0.5"/>
+                                    <f:selectItem class="checkGroup" itemValue="0" itemLabel="0"/>
+                                    <f:selectItem class="checkGroup" itemValue="0.5" itemLabel="0.5"/>
+                                    <f:selectItem class="checkGroup" itemValue="1" itemLabel="1"/>
+                                    <f:selectItem class="checkGroup" itemValue="1.5" itemLabel="1.5"/>
+                                    <f:validateRequired/>
+                                </h:selectOneRadio >
+                            </p:panelGrid>
+                        </div>
+                        <div>
+                            <h:outputLabel>Choose Y: (-3 ... 5)</h:outputLabel>
+                            <p:panelGrid columns="2">
+                                <p:inputText maxlength="17" name="y" id="coord-y"
+                                             placeholder="(-3..5)" value="#{resultBean.newResult.y}">
+                                </p:inputText>
+                            </p:panelGrid>
+                        </div>
+                        <div>
+                            <h:outputLabel for="coord-r" value="Choose R:"/>
+                            <p:panelGrid columns="2">
+                                <h:selectOneRadio id="coord-r" value="#{resultBean.newResult.r}" required="true">
+                                    <f:selectItem class="checkGroup" itemValue="1" itemLabel="1" />
+                                    <f:selectItem class="checkGroup" itemValue="1.5" itemLabel="1.5"/>
+                                    <f:selectItem class="checkGroup" itemValue="2" itemLabel="2"/>
+                                    <f:selectItem class="checkGroup" itemValue="2.5" itemLabel="2.5"/>
+                                    <f:selectItem class="checkGroup" itemValue="3" itemLabel="3"/>
+                                    <f:validateRequired/>
+                                </h:selectOneRadio >
+                            </p:panelGrid>
+                        </div>
+                        <div>
+                            <p:commandButton id="submitBtn" action="#{resultBean.addResults}" type="submit"
+                                             value="Check" update="panel">
+                                <f:ajax execute="input-f" render="panel"/>
+                            </p:commandButton>
+                        </div>
+                        <div style="padding: 10px">
+                            <p:commandButton id="clearBtn" type="submit" value="Clear"
+                                             action="#{resultBean.clearResults}" update="panel">
+                                <f:ajax execute="input-f" render="panel"/>
+                            </p:commandButton>
+                        </div>
+                    </h:form>
+                    <h:form id="hidden-f" style="display: none">
+                        <div>
+                            <p:panelGrid columns="2">
+                                <p:inputText maxlength="17" name="xx" id="coord-xx"
+                                             placeholder="(-3..5)" value="#{resultBean.newResult.x}">
+                                </p:inputText>
+                            </p:panelGrid>
+                        </div>
+                        <div>
+                            <p:panelGrid columns="2">
+                                <p:inputText maxlength="17" name="yy" id="coord-yy"
+                                             placeholder="(-3..5)" value="#{resultBean.newResult.y}">
+                                </p:inputText>
+                            </p:panelGrid>
+                        </div>
+                        <div>
+                            <p:panelGrid columns="2">
+                                <p:inputText maxlength="17" name="rr" id="coord-rr"
+                                             placeholder="(-3..5)" value="#{resultBean.newResult.r}">
+                                </p:inputText>
+                            </p:panelGrid>
+                        </div>
+                        <div>
+                            <p:commandButton id="submitBtn2" action="#{resultBean.addResults}" type="submit"
+                                             value="Check" update="panel">
+                                <f:ajax execute="hidden-f" render="panel"/>
+                            </p:commandButton>
+                        </div>
+                    </h:form>
+                </td>
+                <td>
+                    <div style="max-height: 500px; overflow-y: auto">
+                        <h:panelGroup id="panel">
+                            <p:dataTable styleClass="outputTable" value="#{resultBean.resultList}" var="result" emptyMessage="There are no any data yet!">
+                                <p:column>
+                                    <f:facet name="header">X</f:facet>
+                                    ${result.x}
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">Y</f:facet>
+                                    ${result.y}
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">R</f:facet>
+                                    ${result.r}
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">Time of start</f:facet>
+                                    ${result.currentTime}
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">Execution time</f:facet>
+                                    ${result.executionTime} ns
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">Hit</f:facet>
+                                    ${result.result ? "Yes" : "No"}
+                                </p:column>
+                            </p:dataTable>
+                        </h:panelGroup>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <h:outputScript library="js" name="app.js"/>
+    <h:outputScript library="js" name="jquery-3.6.0.min.js"/>
+</h:body>
+</html>

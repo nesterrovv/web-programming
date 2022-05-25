@@ -1,0 +1,36 @@
+button[class = "submit"]{
+    font-weight: 700;
+    color: white;
+    padding: 2%;
+    border-radius: 10px;
+    background: navy;
+}
+
+#nav_app {
+    float: right;
+    color: #000000;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 13px;
+    margin-top: 0;
+
+    font-weight: 700;
+    padding: 2%;
+    border-radius: 10px;
+    background: rgba(61, 6, 19, 0.13);
+}
+
+#nav_index {
+    float: left;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 13px;
+    margin-top: 0;
+
+    font-weight: 700;
+    padding: 2%;
+    border-radius: 10px;
+    background: rgba(61, 6, 19, 0.13);
+
+}

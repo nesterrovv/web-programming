@@ -1,0 +1,121 @@
+body {
+    background: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+#nav_section {
+    padding: 10px;
+    width: 100%;
+    height: 20%;
+}
+#header {
+    background-color: navy;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 13px;
+    margin-top: 0;
+    padding: 12px;
+}
+
+.header_text{
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 13px;
+    margin-top: 0;
+}
+
+#container {
+    margin: auto auto;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    display: inline-block;
+    width: 75%;
+    height: 280px;
+}
+#sidebar {
+    display: inline-block;
+    width: 10%;
+    height: 500px;
+}
+
+#formX{
+    float: left;
+    padding-right: 20px;
+
+}
+#formY{
+    float: left;
+    padding-right: 20px;
+}
+#formR{
+     float: left;
+     padding-right: 20px;
+ }
+#form{
+    float: left;
+    padding-right: 20px;
+}
+
+.error_text {
+    color: red;
+    font-size: 12px;
+}
+
+.selectX{
+    padding: 5%;
+    float: top;
+    font-size: 16px;
+}
+
+svg {
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid black;
+}
+
+.outputTable {
+    margin-top: 72px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 90%;
+
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: navy;
+    border: 16px solid navy;
+    border-radius: 10px;
+}
+
+.outputTable th {
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+
+}
+.outputTable td {
+    color: #FFF;
+    background: blue;
+    padding: 10px;
+    text-align: center;
+}
+
+
+button[type = "submit"]{
+    font-weight: 700;
+    color: white;
+    padding: 2%;
+    border-radius: 10px;
+    background: navy;
+}
+button.submit:hover {
+    background: blue;
+}
